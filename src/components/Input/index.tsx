@@ -3,7 +3,7 @@ import styles from './Input.module.css';
 
 type Props = {
   type: string;
-  error: string;
+  error: null | string;
   children: ReactNode;
   value: string;
   onChange: (event: { target: { value: string } }) => void;
@@ -20,7 +20,7 @@ const Input: FunctionComponent<Props> = (props: Props) => {
         }
         {...otherProps}
       />
-      {Boolean(error.length) && <span className={styles.error}>{error}</span>}
+      {Boolean(error) && <span className={styles.error}>{error}</span>}
     </label>
   );
 };

@@ -3,6 +3,7 @@ import './Button.css';
 
 type Props = {
   children: ReactNode;
+  onClick: () => Promise<void>;
 };
 
 const Button: FunctionComponent<Props> = (props: Props) => {
@@ -10,7 +11,6 @@ const Button: FunctionComponent<Props> = (props: Props) => {
   return (
     <button className="button" {...otherProps}>
       {children}
-      <i className="icon-right-arrow icon-arrow" />
     </button>
   );
 };

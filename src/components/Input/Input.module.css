@@ -28,6 +28,7 @@
 }
 
 .error {
+  max-width: 250px;
   font-size: var(--description-font-size);
   color: var(--error-color);
 }

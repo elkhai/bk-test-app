@@ -8,10 +8,10 @@ import { fieldType } from '../../overmind/login/types';
 const LoginPage: FunctionComponent = () => {
   const {
     state: {
-      loginForm: { email, password, isValid }
+      loginForm: { email, password }
     },
     actions: {
-      loginForm: { setField }
+      loginForm: { setField, logIn }
     }
   } = useOvermind();
   return (
@@ -22,7 +22,7 @@ const LoginPage: FunctionComponent = () => {
           <Input
             type="email"
             value={email.value}
-            error={isValid ? 'Неверный логин' : ''}
+            error={email.error}
             onChange={e =>
               setField({ fieldType: fieldType.email, value: e.target.value })
             }>
@@ -33,14 +33,17 @@ const LoginPage: FunctionComponent = () => {
           <Input
             type="password"
             value={password.value}
-            error={isValid ? 'Неверный пароль' : ''}
+            error={password.error}
             onChange={e =>
               setField({ fieldType: fieldType.password, value: e.target.value })
             }>
             Пароль
           </Input>
         </div>
-        <Button>Вход</Button>
+        <Button onClick={() => logIn()}>
+          Вход
+          <i className="icon-right-arrow icon-arrow" />
+        </Button>
       </form>
     </div>
   );

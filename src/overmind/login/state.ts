@@ -4,21 +4,27 @@ import { Derive } from 'overmind';
 
 type Field = {
   value: string;
+  error: null | string;
 };
 
 type State = {
   email: Field;
   password: Field;
-  isValid: Derive<State, boolean>;
+  isEmailValid: Derive<State, boolean>;
+  isPasswordValid: Derive<State, boolean>;
+  formError: null | undefined | string;
 };
 
 export const state: State = {
   email: {
-    value: ''
+    value: '',
+    error: null
   },
   password: {
-    value: ''
+    value: '',
+    error: null
   },
-  isValid: state =>
-    isEmail(state.email.value) && isPasswordValid(state.password.value)
+  isEmailValid: state => isEmail(state.email.value),
+  isPasswordValid: state => isPasswordValid(state.password.value),
+  formError: null
 };

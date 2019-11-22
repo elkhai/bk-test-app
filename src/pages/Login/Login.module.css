@@ -1,5 +1,6 @@
 .container {
   padding: 110px 115px 67px;
+  max-height: 487px;
   border-radius: var(--app-border-radius);
   background-color: var(--light-color);
   display: flex;

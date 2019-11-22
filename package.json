@@ -2,7 +2,9 @@
   "name": "bk-test-app",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://35.195.25.70",
   "dependencies": {
+    "ky": "^0.16.0",
     "overmind": "^20.0.0",
     "overmind-forms": "^0.0.4",
     "overmind-react": "^21.0.0",
