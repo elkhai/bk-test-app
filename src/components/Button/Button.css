@@ -1,0 +1,25 @@
+.button {
+  position: relative;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  box-sizing: border-box;
+  border-radius: var(--app-border-radius);
+  height: 40px;
+  padding: 10px 46px;
+  margin-top: 34px;
+  background-color: var(--contrast-color);
+  color: var(--light-color);
+  letter-spacing: 0.72px;
+  font-size: var(--content-font-size);
+  font-weight: 300;
+}
+
+.button:active {
+  top: 2px;
+}
+
+.icon-arrow {
+  font-size: var(--description-font-size);
+  margin-left: 5px;
+}

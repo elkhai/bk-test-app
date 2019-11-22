@@ -1,17 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './assets/style.css';
 import * as serviceWorker from './serviceWorker';
-import { useRoutes, navigate } from 'hookrouter';
-import { routes, routesNames } from './routes';
+import App from './pages/App';
+import { Provider } from 'overmind-react';
+import { createOvermind } from 'overmind';
+import { config } from './overmind';
 
-const RouterViews: React.FC = () => {
-  const routeResult = useRoutes(routes);
-  if (!routeResult) navigate(routesNames.home);
-  return routeResult;
-};
+const overmind = createOvermind(config);
 
-ReactDOM.render(<RouterViews />, document.getElementById('root'));
+ReactDOM.render(
+  <Provider value={overmind}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

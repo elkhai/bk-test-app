@@ -1,0 +1,33 @@
+.label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 37px;
+}
+
+.labelValue {
+  font-size: var(--description-font-size);
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.input {
+  outline: none;
+  box-sizing: border-box;
+  height: 46px;
+  border: solid 2px var(--contrast-color);
+  width: 250px;
+  padding: 15px 13px;
+  border-radius: var(--input-border-radius);
+  font-size: var(--content-font-size);
+  color: var(--input-color);
+}
+
+.inputError {
+  border-color: var(--error-color);
+}
+
+.error {
+  font-size: var(--description-font-size);
+  color: var(--error-color);
+}
