@@ -1,6 +1,6 @@
 import { Operator, when, mutate, fork, map } from 'overmind';
 import { emailErrorMessage, passwordErrorMessage } from './errors';
-import { LogInResponse } from '../api/types';
+import { logInResponse } from '../api/types';
 
 export const isFormValid: (paths: {
   true: Operator;
@@ -10,10 +10,10 @@ export const isFormValid: (paths: {
     return state.loginForm.isEmailValid && state.loginForm.isPasswordValid;
   }, paths);
 
-export const sendLogInRequest: () => Operator<void, LogInResponse> = () =>
+export const sendLogInRequest: () => Operator<void, logInResponse> = () =>
   map(async function sendLogInRequest({ state, effects }) {
     const { email, password } = state.loginForm;
-    const response: LogInResponse = await effects.api.logIn(
+    const response: logInResponse = await effects.api.logIn(
       email.value,
       password.value
     );
@@ -21,8 +21,8 @@ export const sendLogInRequest: () => Operator<void, LogInResponse> = () =>
   });
 
 export const checkRequestStatus: (paths: {
-  [key: string]: Operator<LogInResponse>;
-}) => Operator<LogInResponse> = paths =>
+  [key: string]: Operator<logInResponse>;
+}) => Operator<logInResponse> = paths =>
   fork(function checkRequestStatus(_, response) {
     return response.result;
   }, paths);
@@ -35,8 +35,8 @@ export const showFieldErrors: () => Operator = () =>
       state.loginForm.password.error = passwordErrorMessage;
   });
 
-export const showFormError: () => Operator<LogInResponse> = () =>
-  mutate(function showFormError({ state }, response: LogInResponse) {
+export const showFormError: () => Operator<logInResponse> = () =>
+  mutate(function showFormError({ state }, response: logInResponse) {
     state.loginForm.formError = response.error;
   });
 

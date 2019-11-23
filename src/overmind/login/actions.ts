@@ -1,7 +1,7 @@
 import { Action, Operator, pipe } from 'overmind';
 import { fieldType } from './types';
 import * as o from './operators';
-import { LogInResponseResult } from '../api/types';
+import { responseResult } from '../api/types';
 import { setLogInState } from '../auth/operators';
 import { logInState } from '../auth/state';
 import { openPage } from '../router/operators';
@@ -21,11 +21,11 @@ export const logIn: Operator = pipe(
       setLogInState(logInState.IN_PROGRESS),
       o.sendLogInRequest(),
       o.checkRequestStatus({
-        [LogInResponseResult.OK]: pipe(
+        [responseResult.OK]: pipe(
           setLogInState(logInState.LOG_IN),
           openPage(Page.HOME)
         ),
-        [LogInResponseResult.ERROR]: o.showFormError()
+        [responseResult.ERROR]: o.showFormError()
       })
     ),
     false: o.showFieldErrors()
