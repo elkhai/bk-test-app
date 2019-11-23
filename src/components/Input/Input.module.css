@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 37px;
+  position: relative;
 }
 
 .labelValue {
@@ -28,6 +29,9 @@
 }
 
 .error {
+  position: absolute;
+  bottom: -25px;
+  left: 0;
   max-width: 250px;
   font-size: var(--description-font-size);
   color: var(--error-color);

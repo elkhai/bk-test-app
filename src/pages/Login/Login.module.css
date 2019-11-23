@@ -1,6 +1,7 @@
 .container {
   padding: 110px 115px 67px;
   max-height: 487px;
+  box-sizing: border-box;
   border-radius: var(--app-border-radius);
   background-color: var(--light-color);
   display: flex;
@@ -32,5 +33,17 @@
 }
 
 .inputWrapper {
-  margin-top: 3px;
+  position: relative;
+  top: 6px;
+}
+
+.buttonWrapper {
+  margin-top: 37px;
+}
+
+.formError {
+  position: absolute;
+  bottom: 35px;
+  max-width: 250px;
+  color: var(--error-color);
 }
