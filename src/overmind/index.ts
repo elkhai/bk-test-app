@@ -5,8 +5,10 @@ import * as router from './router';
 import * as auth from './auth';
 import * as loginForm from './login';
 import * as api from './api';
+import * as storage from './storage';
 
 export const config = namespaced({
+  storage,
   auth,
   router,
   loginForm,

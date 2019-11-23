@@ -1,7 +1,7 @@
 export enum logInState {
-  logIn,
-  logOut,
-  inProgress
+  LOG_IN,
+  LOG_OUT,
+  IN_PROGRESS
 }
 
 export type State = {
@@ -9,5 +9,5 @@ export type State = {
 };
 
 export const state: State = {
-  logInState: logInState.logOut
+  logInState: logInState.LOG_OUT
 };

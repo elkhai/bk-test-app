@@ -9,4 +9,4 @@ export const setPage: <T>(page: Page) => Operator<T> = page =>
 export const openPage: <T>(page: Page) => Operator<T> = page =>
   run(function doSomething({ effects }) {
     effects.router.open(page);
-  })
+  });

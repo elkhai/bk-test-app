@@ -4,7 +4,9 @@ type IParams = {
   [param: string]: string;
 } | void;
 
-export function initialize(routes: { [url: string]: (params: IParams) => void }) {
+export function initialize(routes: {
+  [url: string]: (params: IParams) => void;
+}) {
   Object.keys(routes).forEach(url => {
     page(url, ({ params }) => routes[url](params));
   });

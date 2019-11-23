@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://35.195.25.70",
   "dependencies": {
+    "idb-keyval": "^3.2.0",
     "ky": "^0.16.0",
     "overmind": "^20.0.0",
     "overmind-forms": "^0.0.4",

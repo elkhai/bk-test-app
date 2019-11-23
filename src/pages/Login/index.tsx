@@ -15,8 +15,8 @@ const LoginPage: FunctionComponent = () => {
     }
   } = useOvermind();
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>Вход в личный кабинет</div>
+    <main className={styles.container}>
+      <header className={styles.header}>Вход в личный кабинет</header>
       <form className={styles.form} onSubmit={e => e.preventDefault()}>
         <div className={styles.inputWrapper}>
           <Input
@@ -50,7 +50,7 @@ const LoginPage: FunctionComponent = () => {
           <span className={styles.formError}>{formError}</span>
         )}
       </form>
-    </div>
+    </main>
   );
 };
 
