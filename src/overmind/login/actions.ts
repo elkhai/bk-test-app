@@ -6,6 +6,7 @@ import { setLogInState } from '../auth/operators';
 import { logInState } from '../auth/state';
 import { openPage } from '../router/operators';
 import { Page } from '../router/types';
+import { checkRequestStatus, sendLogInRequest } from '../api/operators';
 
 export const setField: Action<{ fieldType: fieldType; value: string }> = (
   { state },
@@ -19,8 +20,8 @@ export const logIn: Operator = pipe(
   o.isFormValid({
     true: pipe(
       setLogInState(logInState.IN_PROGRESS),
-      o.sendLogInRequest(),
-      o.checkRequestStatus({
+      sendLogInRequest(),
+      checkRequestStatus({
         [responseResult.OK]: pipe(
           setLogInState(logInState.LOG_IN),
           openPage(Page.HOME)

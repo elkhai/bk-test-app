@@ -1,10 +1,10 @@
-type asset = {
+export type quote = {
   asset: string;
-  date: Date;
+  startDate: Date;
   quote: string;
 };
 
-type deal = {
+export type deal = {
   asset: string;
   startDate: Date;
   startQuote: string;
@@ -24,22 +24,12 @@ export enum responseResult {
   ERROR = 'error'
 }
 
-export type logInResponse = {
+export type response = {
   result: responseResult;
   error?: string;
+  assets?: Array<quote>;
+  deals?: Array<quote>;
 };
-
-export type quoteResponse = {
-  result: responseResult;
-  assets: Array<asset>;
-  error?: string;
-};
-
-export type historyResponse = {
-  result: responseResult;
-  deals: Array<deal>;
-  error?: string;
-}
 
 export enum request {
   login = 'login',

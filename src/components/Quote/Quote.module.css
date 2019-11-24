@@ -1,0 +1,34 @@
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: var(--content-font-size);
+  border-bottom: solid 1px var(--divider-color);
+  letter-spacing: 0.72px;
+  padding: 15px 0;
+  margin-left: var(--table-margin);
+  position: relative;
+}
+
+.section.withoutBorder {
+  border-bottom: none;
+}
+
+.text {
+  flex: 1;
+}
+
+.text.moved {
+  margin-left: var(--table-margin);
+}
+
+.button {
+  cursor: pointer;
+  position: absolute;
+  left: -35px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: var(--contrast-color);
+  font-size: 20px;
+}

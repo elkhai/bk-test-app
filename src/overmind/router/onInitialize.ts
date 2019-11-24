@@ -2,7 +2,7 @@ import { OnInitialize } from 'overmind';
 import { Page } from './types';
 
 const onInitialize: OnInitialize = async ({ state, actions, effects }) => {
-  // restore state
+  // restore logInState - important for routing
   const logInState = await effects.storage.getFromIdb('logInState');
   if (logInState !== undefined) state.auth.logInState = Number(logInState);
 

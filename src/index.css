@@ -8,6 +8,7 @@
   --dark-color: #000;
   --error-color: #d32f2f;
   --input-color: rgba(0, 0, 0, 0.7);
+  --divider-color: rgba(0, 0, 0, 0.1);
 
   /* fonts */
   --logo-font-size: 25px;
@@ -19,6 +20,9 @@
   /* border-radius */
   --app-border-radius: 20px;
   --input-border-radius: 6px;
+
+  /* margins */
+  --table-margin: 30px;
 }
 
 body {
@@ -34,4 +38,10 @@ body,
 #root {
   width: 100%;
   height: 100%;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding-inline-start: 0;
 }
