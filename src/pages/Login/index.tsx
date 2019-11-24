@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import styles from './Login.module.css';
-import Input from '../../components/Input';
+import Input, { sizes } from '../../components/Input';
 import Button from '../../components/Button';
 import { useOvermind } from '../../overmind';
 import { fieldType } from '../../overmind/login/types';
@@ -20,6 +20,8 @@ const LoginPage: FunctionComponent = () => {
       <form className={styles.form} onSubmit={e => e.preventDefault()}>
         <div className={styles.inputWrapper}>
           <Input
+            placeholder="user@mail.ru"
+            size={sizes.XL}
             type="email"
             value={email.value}
             error={email.error}
@@ -31,6 +33,8 @@ const LoginPage: FunctionComponent = () => {
         </div>
         <div className={styles.inputWrapper}>
           <Input
+            placeholder="*********"
+            size={sizes.XL}
             type="password"
             value={password.value}
             error={password.error}

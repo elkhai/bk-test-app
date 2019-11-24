@@ -5,12 +5,14 @@
   --bg-color: #e1e1e1;
   --light-color: #ffffff;
   --contrast-color: #1a237e;
+  --contrast-color-1: rgb(26, 35, 126, 0.1);
   --dark-color: #000;
   --error-color: #d32f2f;
   --input-color: rgba(0, 0, 0, 0.7);
   --divider-color: rgba(0, 0, 0, 0.1);
 
   /* fonts */
+  --result-font-size: 30px;
   --logo-font-size: 25px;
   --header-font-size: 20px;
   --content-font-size: 18px;
@@ -44,4 +46,8 @@ ul {
   list-style: none;
   margin: 0;
   padding-inline-start: 0;
+}
+
+.flexBox {
+  flex: 1;
 }

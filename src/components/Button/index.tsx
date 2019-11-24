@@ -3,7 +3,7 @@ import './Button.css';
 
 type Props = {
   children: ReactNode;
-  onClick: () => Promise<void>;
+  onClick: () => void | Promise<void>;
 };
 
 const Button: FunctionComponent<Props> = (props: Props) => {

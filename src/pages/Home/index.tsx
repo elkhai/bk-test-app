@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useState } from 'react';
 import styles from './Home.module.css';
 import Quotes from '../Quotes';
+import Converter from '../Converter';
 import { useOvermind } from '../../overmind';
 import nanoid from 'nanoid';
 
@@ -10,7 +11,7 @@ const headers = [
   ['Актив', 'Начало', 'Котировка', 'Конец', 'Котировка', 'Прибыль']
 ];
 
-const tabs = [<Quotes key="quotes" />];
+const tabs = [<Quotes key="quotes" />, <Converter key="converter" />];
 
 const HomePage: FunctionComponent = () => {
   useOvermind();
@@ -43,7 +44,9 @@ const HomePage: FunctionComponent = () => {
           </span>
         ))}
       </header>
-      <div className={styles.content}>{tabs[tab]}</div>
+      <div className={`${styles.content} ${tab === 0 ? styles.overlay : ''}`}>
+        {tabs[tab]}
+      </div>
     </main>
   );
 };

@@ -87,7 +87,11 @@
 }
 
 .content {
+  height: 350px;
   max-height: 350px;
-  overflow-y: overlay;
   box-sizing: border-box;
+}
+
+.content.overlay {
+  overflow-y: overlay;
 }

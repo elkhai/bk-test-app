@@ -17,11 +17,25 @@
   box-sizing: border-box;
   height: 46px;
   border: solid 2px var(--contrast-color);
-  width: 250px;
   padding: 15px 13px;
   border-radius: var(--input-border-radius);
   font-size: var(--content-font-size);
+}
+
+.input::placeholder {
   color: var(--input-color);
+}
+
+.inputM {
+  width: 100px;
+}
+
+.inputL {
+  width: 124px;
+}
+
+.inputXL {
+  width: 250px;
 }
 
 .inputError {
