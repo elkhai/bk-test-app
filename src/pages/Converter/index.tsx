@@ -4,21 +4,15 @@ import Input, { sizes } from '../../components/Input';
 import Dropdown from '../../components/Dropdown';
 import Button from '../../components/Button';
 import { useOvermind } from '../../overmind';
+import { dropdown } from '../../overmind/quotes/types';
 
 const Converter: FunctionComponent = () => {
   const {
     state: {
-      quotes: {
-        amount,
-        firstDropdownValue,
-        secondDropdownValue,
-        uniqueAssets,
-        result,
-        secondDropdownOptions
-      }
+      quotes: { amount, firstDropdown, secondDropdown, options, result }
     },
     actions: {
-      quotes: { changeAmount, changeFirstDropdown, changeSecondDropdown, convert }
+      quotes: { changeAmount, changeDropdown, convertAssets }
     }
   } = useOvermind();
   const isResultNotEmpty = Boolean(result.length);
@@ -36,22 +30,34 @@ const Converter: FunctionComponent = () => {
         </div>
         <div className="flexBox">
           <Dropdown
-            value={firstDropdownValue}
-            options={uniqueAssets.filter(asset => asset !== firstDropdownValue)}
-            onChange={changeFirstDropdown}
+            key="first-dropdown"
+            value={firstDropdown}
+            options={options.firstDropdown}
+            onChange={value =>
+              changeDropdown({
+                value,
+                dd: dropdown.FIRST,
+                otherDD: dropdown.SECOND
+              })
+            }
           />
         </div>
         <div className="flexBox">
           <Dropdown
-            value={secondDropdownValue}
-            options={secondDropdownOptions.filter(
-              asset => asset !== secondDropdownValue
-            )}
-            onChange={changeSecondDropdown}
+            key="second-dropdown"
+            value={secondDropdown}
+            options={options.secondDropdown}
+            onChange={value =>
+              changeDropdown({
+                value,
+                dd: dropdown.SECOND,
+                otherDD: dropdown.FIRST
+              })
+            }
           />
         </div>
         <div className="flexBox">
-          <Button onClick={convert}>Рассчитать</Button>
+          <Button onClick={convertAssets}>Рассчитать</Button>
         </div>
       </section>
       <section className={styles.output}>

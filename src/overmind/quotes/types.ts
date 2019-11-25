@@ -1,5 +1,4 @@
-import { quote } from '../api/types';
-
-export type mappedQuotes = {
-  [key: string]: quote;
-};
+export enum dropdown {
+  FIRST = 'firstDropdown',
+  SECOND = 'secondDropdown'
+}

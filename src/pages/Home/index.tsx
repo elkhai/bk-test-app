@@ -2,7 +2,6 @@ import React, { FunctionComponent, useState } from 'react';
 import styles from './Home.module.css';
 import Quotes from '../Quotes';
 import Converter from '../Converter';
-import { useOvermind } from '../../overmind';
 import nanoid from 'nanoid';
 
 const headers = [
@@ -14,7 +13,6 @@ const headers = [
 const tabs = [<Quotes key="quotes" />, <Converter key="converter" />];
 
 const HomePage: FunctionComponent = () => {
-  useOvermind();
   const [tab, setTab] = useState(0);
   const buttons = [
     { text: 'Курсы валют' },

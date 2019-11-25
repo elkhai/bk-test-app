@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import styles from './Quote.module.css';
 import { useHover } from '../../hooks';
-import { useOvermind } from '../../overmind';
 
 type Props = {
   isFav?: boolean;
@@ -13,7 +12,6 @@ type Props = {
 };
 
 const Quote: FunctionComponent<Props> = (props: Props) => {
-  useOvermind();
   const [hovered, onMouseEnter, onMouseLeave] = useHover(false);
   return (
     <section

@@ -12,7 +12,7 @@ const onInitialize: OnInitialize = async ({ state, effects }, overmind) => {
     if (mutation.path.indexOf('favs') !== -1) {
       setTimeout(() => {
         effects.storage.saveToIdb('favs', JSON.stringify(state.quotes.favs));
-      }, 100)
+      }, 100);
     }
   });
 };

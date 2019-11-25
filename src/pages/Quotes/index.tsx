@@ -8,9 +8,10 @@ const Quotes: FunctionComponent = () => {
   const {
     actions,
     state: {
-      quotes: { mappedList, favs }
+      quotes: { graph, favs }
     }
   } = useOvermind();
+  const mappedList = graph.getMappedQuotes();
   const favoriteList: Array<quote> = [],
     otherList: Array<quote> = [];
   for (const item in mappedList) {

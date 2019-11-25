@@ -1,23 +1,29 @@
-import { mappedQuotes } from './types';
+import { Derive } from 'overmind';
+import Graph from '../../structures/Graph';
 
 type State = {
   favs: Array<string>;
-  mappedList: mappedQuotes;
-  uniqueAssets: Array<string>;
   amount: number;
-  firstDropdownValue: string;
-  secondDropdownValue: string;
-  secondDropdownOptions: Array<string>;
+  firstDropdown: string;
+  secondDropdown: string;
+  graph: Graph;
+  options: Derive<State, { firstDropdown: string[]; secondDropdown: string[] }>;
   result: string;
 };
 
 export const state: State = {
   favs: [],
-  mappedList: {},
-  uniqueAssets: [],
   amount: 0,
-  firstDropdownValue: 'EUR',
-  secondDropdownValue: 'USD',
-  secondDropdownOptions: [],
+  firstDropdown: 'EUR',
+  secondDropdown: 'USD',
+  graph: new Graph(),
+  options: state => ({
+    firstDropdown: state.graph
+      .getNodes()
+      .filter(asset => asset !== state.firstDropdown),
+    secondDropdown: state.graph
+      .getNodes()
+      .filter(asset => asset !== state.secondDropdown)
+  }),
   result: ''
 };
