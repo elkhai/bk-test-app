@@ -1,12 +1,5 @@
-import { Action, Operator, pipe } from 'overmind';
+import { Action } from 'overmind';
 import { fieldType } from './types';
-import * as o from './operators';
-import { responseResult } from '../api/types';
-import { setLogInState } from '../auth/operators';
-import { logInState } from '../auth/state';
-import { openPage } from '../router/operators';
-import { Page } from '../router/types';
-import { checkRequestStatus, sendLogInRequest } from '../api/operators';
 
 export const setField: Action<{ fieldType: fieldType; value: string }> = (
   { state },
@@ -14,21 +7,3 @@ export const setField: Action<{ fieldType: fieldType; value: string }> = (
 ) => {
   state.loginForm[payload.fieldType].value = payload.value;
 };
-
-export const logIn: Operator = pipe(
-  o.clearErrors(),
-  o.isFormValid({
-    true: pipe(
-      setLogInState(logInState.IN_PROGRESS),
-      sendLogInRequest(),
-      checkRequestStatus({
-        [responseResult.OK]: pipe(
-          setLogInState(logInState.LOG_IN),
-          openPage(Page.HOME)
-        ),
-        [responseResult.ERROR]: o.showFormError()
-      })
-    ),
-    false: o.showFieldErrors()
-  })
-);

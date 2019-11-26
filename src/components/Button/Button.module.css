@@ -1,4 +1,5 @@
 .button {
+  cursor: pointer;
   position: relative;
   outline: none;
   box-shadow: none;
@@ -14,11 +15,12 @@
   font-weight: 300;
 }
 
-.button:active {
-  top: 2px;
+.transparent {
+  border: 2px solid var(--contrast-color);
+  background-color: transparent;
+  color: var(--contrast-color);
 }
 
-.icon-arrow {
-  font-size: var(--description-font-size);
-  margin-left: 9px;
+.button:active {
+  top: 2px;
 }

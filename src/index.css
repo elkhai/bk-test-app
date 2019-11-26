@@ -51,3 +51,8 @@ ul {
 .flexBox {
   flex: 1;
 }
+
+.icon-arrow {
+  font-size: var(--description-font-size);
+  margin-left: 9px;
+}

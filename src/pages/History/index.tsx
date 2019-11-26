@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState, useEffect } from 'react';
+import React, { FunctionComponent, useEffect } from 'react';
 import { useOvermind } from '../../overmind';
 import styles from './History.module.css';
 import Deal from '../../components/Deal';

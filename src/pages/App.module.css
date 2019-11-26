@@ -13,4 +13,11 @@
   position: absolute;
   top: 45px;
   left: 90px;
+  margin: 0;
+}
+
+.button {
+  position: absolute;
+  top: 45px;
+  right: 90px;
 }

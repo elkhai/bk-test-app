@@ -19,7 +19,8 @@
 
 .input {
   box-sizing: border-box;
-  width: 25px;
+  padding-top: 2px;
+  width: 30px;
   height: 25px;
   font-size: var(--tab-font-size);
 }

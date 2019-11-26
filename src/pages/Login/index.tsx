@@ -11,7 +11,8 @@ const LoginPage: FunctionComponent = () => {
       loginForm: { email, password, formError }
     },
     actions: {
-      loginForm: { setField, logIn }
+      loginForm: { setField },
+      auth: { logIn }
     }
   } = useOvermind();
   return (

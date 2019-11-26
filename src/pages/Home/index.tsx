@@ -18,7 +18,7 @@ const tabs = [
 ];
 
 const HomePage: FunctionComponent = () => {
-  const [tab, setTab] = useState(2);
+  const [tab, setTab] = useState(0);
   const buttons = [
     { text: 'Курсы валют' },
     { text: 'Конвертор' },
