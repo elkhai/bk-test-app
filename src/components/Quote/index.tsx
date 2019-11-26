@@ -31,10 +31,9 @@ const Quote: FunctionComponent<Props> = (props: Props) => {
         />
       </button>
       <span className={styles.text}>{props.asset}</span>
-      <span className={`${styles.text} ${styles.moved}`}>{props.quote}</span>
-      <span className={`${styles.text} ${styles.moved}`}>
-        {props.startDate}
-      </span>
+      <span className={styles.text}>{props.quote}</span>
+      <span className={styles.text}>{props.startDate}</span>
+      <figure className={styles.divider} />
     </section>
   );
 };

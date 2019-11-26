@@ -3,11 +3,19 @@
   align-items: center;
   justify-content: flex-start;
   font-size: var(--content-font-size);
-  border-bottom: solid 1px var(--divider-color);
   letter-spacing: 0.72px;
   padding: 15px 0;
-  margin-left: var(--table-margin);
+  /* margin-left: var(--table-margin); */
   position: relative;
+}
+
+.divider {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 90%;
+  margin: 0;
+  border-bottom: solid 1px var(--divider-color);
 }
 
 .section.withoutBorder {
@@ -16,16 +24,13 @@
 
 .text {
   flex: 1;
-}
-
-.text.moved {
-  margin-left: var(--table-margin);
+  text-align: center;
 }
 
 .button {
   cursor: pointer;
   position: absolute;
-  left: -35px;
+  left: 15px;
   background-color: transparent;
   outline: none;
   border: none;

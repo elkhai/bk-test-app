@@ -2,6 +2,7 @@ import React, { FunctionComponent, useState } from 'react';
 import styles from './Home.module.css';
 import Quotes from '../Quotes';
 import Converter from '../Converter';
+import History from '../History';
 import nanoid from 'nanoid';
 
 const headers = [
@@ -10,17 +11,21 @@ const headers = [
   ['Актив', 'Начало', 'Котировка', 'Конец', 'Котировка', 'Прибыль']
 ];
 
-const tabs = [<Quotes key="quotes" />, <Converter key="converter" />];
+const tabs = [
+  <Quotes key="quotes" />,
+  <Converter key="converter" />,
+  <History key="history" />
+];
 
 const HomePage: FunctionComponent = () => {
-  const [tab, setTab] = useState(0);
+  const [tab, setTab] = useState(2);
   const buttons = [
     { text: 'Курсы валют' },
     { text: 'Конвертор' },
     { text: 'История' }
   ];
   return (
-    <main className={styles.main}>
+    <main className={`${styles.main} ${tab === 2 ? styles.wide : ''}`}>
       <nav className={styles.navigation}>
         {buttons.map(({ text }, i) => (
           <button
@@ -36,13 +41,19 @@ const HomePage: FunctionComponent = () => {
         ))}
       </nav>
       <header className={styles.header}>
-        {headers[tab].map((h, i) => (
-          <span key={i} className={tab === 1 ? styles.hAlone : styles.h}>
+        {headers[tab].map(h => (
+          <span
+            key={nanoid()}
+            className={`${styles.h} ${tab === 1 ? styles.hAlone : ''}`}>
             {h}
           </span>
         ))}
       </header>
-      <div className={`${styles.content} ${tab === 0 ? styles.overlay : ''}`}>
+      <div
+        className={`
+        ${styles.content} 
+        ${tab === 0 ? styles.overlay : ''} 
+      `}>
         {tabs[tab]}
       </div>
     </main>

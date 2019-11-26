@@ -1,0 +1,49 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--tab-font-size);
+  align-self: center;
+}
+
+.controlInput {
+  margin: 0 20px;
+}
+
+.input {
+  box-sizing: border-box;
+  width: 25px;
+  height: 25px;
+  font-size: var(--tab-font-size);
+}
+
+.button {
+  cursor: pointer;
+  padding: 5px;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: var(--light-color);
+  color: var(--contrast-color);
+  font-size: var(--logo-font-size);
+  display: flex;
+  align-items: center;
+}
+
+.button:active {
+  position: relative;
+  top: 1px;
+}
+
+.reversedIcon {
+  transform: rotate(180deg);
+}

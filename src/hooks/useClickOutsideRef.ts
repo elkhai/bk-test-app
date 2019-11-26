@@ -4,7 +4,7 @@ export function useClickOutsideRef(initialIsVisible: boolean) {
   const [isComponentVisible, setIsComponentVisible] = useState(
     initialIsVisible
   );
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<any>(null);
 
   const handleClickOutside = (event: MouseEvent) => {
     if (ref.current && !ref.current.contains(event.target as Node)) {

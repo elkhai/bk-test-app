@@ -1,0 +1,11 @@
+.main {
+  display: flex;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--divider-color);
+}
+
+.text {
+  letter-spacing: 0.72px;
+  font-size: var(--content-font-size);
+  text-align: center;
+}

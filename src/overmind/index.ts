@@ -7,6 +7,7 @@ import * as loginForm from './login';
 import * as api from './api';
 import * as storage from './storage';
 import * as quotes from './quotes';
+import * as history from './history';
 
 export const config = namespaced({
   quotes,
@@ -14,6 +15,7 @@ export const config = namespaced({
   auth,
   router,
   loginForm,
+  history,
   api
 });
 

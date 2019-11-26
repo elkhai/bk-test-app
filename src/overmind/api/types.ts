@@ -6,9 +6,9 @@ export type quote = {
 
 export type deal = {
   asset: string;
-  startDate: Date;
+  startDate: string;
   startQuote: string;
-  finishDate: Date;
+  finishDate: string;
   finishQuote: string;
   profit: string;
 };
@@ -28,7 +28,7 @@ export type response = {
   result: responseResult;
   error?: string;
   assets?: Array<quote>;
-  deals?: Array<quote>;
+  deals?: Array<deal>;
 };
 
 export enum request {
