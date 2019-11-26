@@ -14,12 +14,10 @@ const History: FunctionComponent = () => {
       history: { changePage, changeInputValue }
     }
   } = useOvermind();
-  const { ref, isComponentVisible, setIsComponentVisible } = useClickOutsideRef(
-    false
-  );
+  const { ref, setIsComponentVisible } = useClickOutsideRef(false);
   useEffect(() => {
     changePage(inputValue - 1);
-  }, [isComponentVisible]);
+  });
   return (
     <section className={styles.main}>
       <ul>
