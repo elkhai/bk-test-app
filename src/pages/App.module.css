@@ -11,13 +11,13 @@
   font-weight: bold;
   color: var(--dark-color);
   position: absolute;
-  top: 45px;
-  left: 90px;
+  top: 3%;
+  left: 5%;
   margin: 0;
 }
 
 .button {
   position: absolute;
-  top: 45px;
-  right: 90px;
+  top: 3%;
+  right: 5%;
 }

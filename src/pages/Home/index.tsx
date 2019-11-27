@@ -40,11 +40,16 @@ const HomePage: FunctionComponent = () => {
           </button>
         ))}
       </nav>
-      <header className={styles.header}>
+      <header
+        className={`${styles.header} ${
+          tab === 0 ? styles.headerMargined : ''
+        }`}>
         {headers[tab].map(h => (
           <span
             key={nanoid()}
-            className={`${styles.h} ${tab === 1 ? styles.hAlone : ''}`}>
+            className={`${styles.h} ${tab === 1 ? styles.hAlone : ''} ${
+              tab === 0 ? styles.hMargined : ''
+            }`}>
             {h}
           </span>
         ))}

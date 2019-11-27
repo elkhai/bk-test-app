@@ -23,8 +23,13 @@
   --app-border-radius: 20px;
   --input-border-radius: 6px;
 
-  /* margins */
+  /* margins/padding */
   --table-margin: 30px;
+  --app-padding: 40px;
+
+  /* components sizes */
+  --header-height: 60px;
+  --navigation-width: 500px;
 }
 
 body {

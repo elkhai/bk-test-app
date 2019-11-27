@@ -24,13 +24,12 @@ const Quotes: FunctionComponent = () => {
   return (
     <ul>
       {favoriteList.map((item: quote) => (
-        <li key={nanoid()}>
-          <Quote
-            {...item}
-            isFav={true}
-            onFavChange={actions.quotes.manageFavs}
-          />
-        </li>
+        <Quote
+          key={nanoid()}
+          {...item}
+          isFav={true}
+          onFavChange={actions.quotes.manageFavs}
+        />
       ))}
       {otherList.map((item: quote, index) => (
         <li key={nanoid()}>

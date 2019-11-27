@@ -14,12 +14,7 @@ type Props = {
 const Quote: FunctionComponent<Props> = (props: Props) => {
   const [hovered, onMouseEnter, onMouseLeave] = useHover(false);
   return (
-    <section
-      className={
-        props.withoutBorder
-          ? `${styles.section} ${styles.withoutBorder}`
-          : styles.section
-      }>
+    <li className={styles.section}>
       <button
         className={styles.button}
         {...{ onMouseEnter, onMouseLeave }}
@@ -33,8 +28,8 @@ const Quote: FunctionComponent<Props> = (props: Props) => {
       <span className={styles.text}>{props.asset}</span>
       <span className={styles.text}>{props.quote}</span>
       <span className={styles.text}>{props.startDate}</span>
-      <figure className={styles.divider} />
-    </section>
+      {!props.withoutBorder && <figure className={styles.divider} />}
+    </li>
   );
 };
 

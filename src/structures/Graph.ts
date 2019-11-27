@@ -11,7 +11,7 @@ type quoteOperation = {
   asset: string;
 };
 
-class Graph implements Graph {
+class Graph {
   private nodes: string[] = [];
   private mappedQuotes: { [key: string]: quote } = {};
   private edges: { [key: string]: string[] } = {};

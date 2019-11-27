@@ -1,22 +1,26 @@
 .container {
-  padding: 110px 115px 67px;
-  max-height: 487px;
+  position: relative;
+  top: calc(var(--header-height) / 2);
+  min-height: 430px;
   box-sizing: border-box;
-  border-radius: var(--app-border-radius);
+  border-bottom-left-radius: var(--app-border-radius);
+  border-bottom-right-radius: var(--app-border-radius);
   background-color: var(--light-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: relative;
+  align-self: center;
+  width: 480px;
+  height: 45%;
 }
 
 .header {
   position: absolute;
-  top: 0;
+  top: calc(var(--header-height) * -1);
   left: 0;
   width: 100%;
-  height: 60px;
-  line-height: 60px;
+  height: var(--header-height);
+  line-height: var(--header-height);
   color: var(--light-color);
   font-size: var(--header-font-size);
   text-align: center;
@@ -46,4 +50,11 @@
   bottom: 35px;
   max-width: 250px;
   color: var(--error-color);
+}
+
+@media screen and (max-width: 550px) {
+  .container {
+    width: 90%;
+    min-width: 270px;
+  }
 }
