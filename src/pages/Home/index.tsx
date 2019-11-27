@@ -47,9 +47,11 @@ const HomePage: FunctionComponent = () => {
         {headers[tab].map(h => (
           <span
             key={nanoid()}
-            className={`${styles.h} ${tab === 1 ? styles.hAlone : ''} ${
-              tab === 0 ? styles.hMargined : ''
-            }`}>
+            className={`
+            ${styles.h} 
+            ${tab === 0 ? styles.hMargined : ''} 
+            ${tab === 1 ? styles.hAlone : ''} 
+            ${tab === 2 ? styles.hTable : ''}`}>
             {h}
           </span>
         ))}
@@ -57,7 +59,8 @@ const HomePage: FunctionComponent = () => {
       <div
         className={`
         ${styles.content} 
-        ${tab === 0 ? styles.overlay : ''} 
+        ${tab === 0 ? styles.overlay : ''}
+        ${tab === 2 ? styles.table : ''}
       `}>
         {tabs[tab]}
       </div>

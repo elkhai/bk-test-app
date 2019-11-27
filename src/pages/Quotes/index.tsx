@@ -32,13 +32,12 @@ const Quotes: FunctionComponent = () => {
         />
       ))}
       {otherList.map((item: quote, index) => (
-        <li key={nanoid()}>
-          <Quote
-            {...item}
-            withoutBorder={index === otherList.length - 1}
-            onFavChange={actions.quotes.manageFavs}
-          />
-        </li>
+        <Quote
+          key={nanoid()}
+          {...item}
+          withoutBorder={index === otherList.length - 1}
+          onFavChange={actions.quotes.manageFavs}
+        />
       ))}
     </ul>
   );

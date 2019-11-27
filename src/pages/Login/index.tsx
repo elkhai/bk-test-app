@@ -19,38 +19,32 @@ const LoginPage: FunctionComponent = () => {
     <main className={styles.container}>
       <header className={styles.header}>Вход в личный кабинет</header>
       <form className={styles.form} onSubmit={e => e.preventDefault()}>
-        <div className={styles.inputWrapper}>
-          <Input
-            placeholder="user@mail.ru"
-            size={sizes.XL}
-            type="email"
-            value={email.value}
-            error={email.error}
-            onChange={e =>
-              setField({ fieldType: fieldType.email, value: e.target.value })
-            }>
-            Логин
-          </Input>
-        </div>
-        <div className={styles.inputWrapper}>
-          <Input
-            placeholder="*********"
-            size={sizes.XL}
-            type="password"
-            value={password.value}
-            error={password.error}
-            onChange={e =>
-              setField({ fieldType: fieldType.password, value: e.target.value })
-            }>
-            Пароль
-          </Input>
-        </div>
-        <div className={styles.buttonWrapper}>
-          <Button onClick={() => logIn()}>
-            Вход
-            <i className="icon-right-arrow icon-arrow" />
-          </Button>
-        </div>
+        <Input
+          placeholder="user@mail.ru"
+          size={sizes.XL}
+          type="email"
+          value={email.value}
+          error={email.error}
+          onChange={e =>
+            setField({ fieldType: fieldType.email, value: e.target.value })
+          }>
+          Логин
+        </Input>
+        <Input
+          placeholder="*********"
+          size={sizes.XL}
+          type="password"
+          value={password.value}
+          error={password.error}
+          onChange={e =>
+            setField({ fieldType: fieldType.password, value: e.target.value })
+          }>
+          Пароль
+        </Input>
+        <Button onClick={() => logIn()}>
+          Вход
+          <i className="icon-right-arrow icon-arrow" />
+        </Button>
         {Boolean(formError) && (
           <span className={styles.formError}>{formError}</span>
         )}

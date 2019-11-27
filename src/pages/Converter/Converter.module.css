@@ -12,6 +12,7 @@
   flex-direction: row;
   align-items: center;
   border-bottom: solid 1px var(--divider-color);
+  flex-wrap: wrap;
 }
 
 .output {

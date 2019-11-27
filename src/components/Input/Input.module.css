@@ -2,11 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 37px;
   position: relative;
 }
 
 .labelValue {
+  position: absolute;
+  top: -30px;
   font-size: var(--description-font-size);
   font-weight: 500;
   margin-bottom: 15px;

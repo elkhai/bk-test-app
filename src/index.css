@@ -57,6 +57,10 @@ ul {
   flex: 1;
 }
 
+.flexBoxTwo {
+  flex: 2;
+}
+
 .icon-arrow {
   font-size: var(--description-font-size);
   margin-left: 9px;

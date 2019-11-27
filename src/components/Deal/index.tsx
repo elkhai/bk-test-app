@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-import nanoid from 'nanoid';
 import styles from './Deal.module.css';
 import { formatDate } from '../../utils/formatDate';
 
@@ -23,18 +22,16 @@ const Deal: FunctionComponent<Props> = (props: Props) => {
   } = props;
   return (
     <li className={styles.main}>
-      {[
-        asset,
-        formatDate(startDate),
-        startQuote,
-        formatDate(finishDate),
-        finishQuote,
-        profit
-      ].map(text => (
-        <span key={nanoid()} className={`flexBox ${styles.text}`}>
-          {text}
-        </span>
-      ))}
+      <span className={`flexBox ${styles.text}`}>{asset}</span>
+      <span className={`flexBoxTwo ${styles.text}`}>
+        {formatDate(startDate)}
+      </span>
+      <span className={`flexBox ${styles.text}`}>{startQuote}</span>
+      <span className={`flexBoxTwo ${styles.text}`}>
+        {formatDate(finishDate)}
+      </span>
+      <span className={`flexBox ${styles.text}`}>{finishQuote}</span>
+      <span className={`flexBox ${styles.text}`}>{profit}</span>
     </li>
   );
 };

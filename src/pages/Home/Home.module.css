@@ -134,4 +134,24 @@
   .header {
     padding: 0 5px;
   }
+
+  .hMargined {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .main.wide {
+    width: 90%;
+    min-width: 500px;
+  }
+
+  .content.table {
+    height: auto;
+    max-height: max-content;
+  }
+
+  .hTable {
+    font-size: var(--description-font-size);
+  }
 }
