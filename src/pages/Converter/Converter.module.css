@@ -27,3 +27,9 @@
 .description {
   font-size: var(--description-font-size);
 }
+
+@media screen and (max-width: 580px) {
+  .input {
+    padding-top: 30px;
+  }
+}

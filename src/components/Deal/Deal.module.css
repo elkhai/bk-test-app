@@ -8,4 +8,13 @@
   letter-spacing: 0.72px;
   font-size: var(--content-font-size);
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 580px) {
+  .text {
+    font-size: var(--small-table-font-size);
+  }
 }

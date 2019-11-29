@@ -23,13 +23,9 @@ const Deal: FunctionComponent<Props> = (props: Props) => {
   return (
     <li className={styles.main}>
       <span className={`flexBox ${styles.text}`}>{asset}</span>
-      <span className={`flexBoxTwo ${styles.text}`}>
-        {formatDate(startDate)}
-      </span>
+      <span className={`flexBox ${styles.text}`}>{formatDate(startDate)}</span>
       <span className={`flexBox ${styles.text}`}>{startQuote}</span>
-      <span className={`flexBoxTwo ${styles.text}`}>
-        {formatDate(finishDate)}
-      </span>
+      <span className={`flexBox ${styles.text}`}>{formatDate(finishDate)}</span>
       <span className={`flexBox ${styles.text}`}>{finishQuote}</span>
       <span className={`flexBox ${styles.text}`}>{profit}</span>
     </li>
