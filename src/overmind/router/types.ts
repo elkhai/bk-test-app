@@ -4,7 +4,7 @@ export type Page = {
 };
 
 const basePath =
-  process.env.NODE_ENV === 'production' ? '/bktestapp-page/' : '/';
+  process.env.NODE_ENV === 'production' ? '/' : '/';
 
 export const Page: Page = {
   HOME: basePath,

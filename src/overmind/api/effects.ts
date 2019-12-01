@@ -2,9 +2,7 @@ import ky from 'ky';
 import { request, response } from './types';
 
 const requestUrl =
-  process.env.NODE_ENV === 'production'
-    ? 'http://35.195.25.70/api.php'
-    : '/api.php';
+  process.env.NODE_ENV === 'production' ? '/api.php' : '/api.php';
 
 export async function logIn(
   login: string,
