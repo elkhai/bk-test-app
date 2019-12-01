@@ -1,7 +1,7 @@
 import { Page } from './types';
 
 type State = {
-  currentPage: Page;
+  currentPage: string;
   appIsReady: boolean;
 };
 
