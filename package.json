@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://35.195.25.70",
+  "homepage": "https://shadye.github.io/bktestapp-page",
   "dependencies": {
     "idb-keyval": "^3.2.0",
     "ismobilejs": "^1.0.3",
