@@ -45,6 +45,10 @@
   color: var(--error-color);
 }
 
+.buttonWrapper {
+  width: 160px;
+}
+
 @media screen and (max-width: 550px) {
   .container {
     width: 90%;

@@ -7,12 +7,13 @@
   box-sizing: border-box;
   border-radius: var(--app-border-radius);
   height: 40px;
-  padding: 10px 46px;
+  padding: 10px;
   background-color: var(--contrast-color);
   color: var(--light-color);
   letter-spacing: 0.72px;
   font-size: var(--content-font-size);
   font-weight: 300;
+  width: 100%;
 }
 
 .transparent {

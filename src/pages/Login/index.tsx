@@ -41,10 +41,12 @@ const LoginPage: FunctionComponent = () => {
           }>
           Пароль
         </Input>
-        <Button onClick={() => logIn()}>
-          Вход
-          <i className="icon-right-arrow icon-arrow" />
-        </Button>
+        <div className={styles.buttonWrapper}>
+          <Button onClick={() => logIn()}>
+            Вход
+            <i className="icon-right-arrow icon-arrow" />
+          </Button>
+        </div>
         {Boolean(formError) && (
           <span className={styles.formError}>{formError}</span>
         )}
