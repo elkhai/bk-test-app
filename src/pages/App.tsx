@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styles from './App.module.css';
 import { useOvermind } from '../overmind';
 import { Page } from '../overmind/router/types';
@@ -12,7 +12,7 @@ const routes = {
   [Page.LOGIN.toString()]: <LoginPage />
 };
 
-const App: React.FC = () => {
+const App: FC = () => {
   const { state, actions } = useOvermind();
   const Route = routes[state.router.currentPage];
   return (

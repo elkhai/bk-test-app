@@ -4,13 +4,15 @@ import styles from './Input.module.css';
 export enum sizes {
   M = 'M',
   L = 'L',
-  XL = 'XL'
+  XL = 'XL',
+  MAX = 'MAX'
 }
 
 const sizesClasses = {
   [sizes.M]: styles.inputM,
   [sizes.L]: styles.inputL,
-  [sizes.XL]: styles.inputXL
+  [sizes.XL]: styles.inputXL,
+  [sizes.MAX]: styles.inputMax
 };
 
 type Props = {
@@ -26,12 +28,11 @@ type Props = {
 const Input: FunctionComponent<Props> = (props: Props) => {
   const { children, error, size, ...otherProps } = props;
   return (
-    <label className={styles.label}>
+    <label className={`${styles.label} ${sizesClasses[size]}`}>
       <span className={styles.labelValue}>{children}</span>
       <input
         className={`
           ${styles.input}
-          ${sizesClasses[size]}
           ${error ? styles.inputError : ''}
         `}
         {...otherProps}

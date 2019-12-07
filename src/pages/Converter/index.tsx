@@ -19,16 +19,16 @@ const Converter: FunctionComponent = () => {
   return (
     <section className={styles.main}>
       <section className={styles.input}>
-        <div className="flexBox">
+        <div className={styles.amountWrapper}>
           <Input
             type="number"
-            size={sizes.M}
+            size={sizes.MAX}
             value={amount}
             onChange={e => changeAmount(Number(e.target.value))}>
             Сумма
           </Input>
         </div>
-        <div className="flexBox">
+        <div className={styles.dropdownsWrapper}>
           <Dropdown
             key="first-dropdown"
             value={firstDropdown}
@@ -41,8 +41,6 @@ const Converter: FunctionComponent = () => {
               })
             }
           />
-        </div>
-        <div className="flexBox">
           <Dropdown
             key="second-dropdown"
             value={secondDropdown}
@@ -56,7 +54,7 @@ const Converter: FunctionComponent = () => {
             }
           />
         </div>
-        <div className="flexBox">
+        <div className={styles.buttonWrapper}>
           <Button onClick={convertAssets}>Рассчитать</Button>
         </div>
       </section>
