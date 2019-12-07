@@ -3,8 +3,7 @@ export type Page = {
   LOGIN: string;
 };
 
-const basePath =
-  process.env.NODE_ENV === 'production' ? '/' : '/';
+const basePath = process.env.NODE_ENV === 'production' ? '/' : '/';
 
 export const Page: Page = {
   HOME: basePath,

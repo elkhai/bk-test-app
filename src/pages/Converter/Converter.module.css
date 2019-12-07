@@ -15,6 +15,22 @@
   flex-wrap: wrap;
 }
 
+.amountWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.buttonWrapper {
+  flex: 2;
+}
+
+.dropdownsWrapper {
+  flex: 3;
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .output {
   flex: 1;
   width: 100%;
@@ -28,8 +44,22 @@
   font-size: var(--description-font-size);
 }
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 532px) {
   .input {
     padding-top: 30px;
+  }
+
+  .buttonWrapper {
+    padding: 0 20px;
+  }
+
+  .amountWrapper {
+    padding-left: 20px;
+  }
+}
+
+@media screen and (max-width: 419px) {
+  .amountWrapper {
+    padding: 0 20px;
   }
 }
