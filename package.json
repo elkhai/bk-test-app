@@ -14,7 +14,7 @@
     "idb-keyval": "^3.2.0",
     "ismobilejs": "^1.0.3",
     "ky": "^0.16.0",
-    "nanoid": "^2.1.7",
+    "nanoid": "^3.1.31",
     "overmind": "^20.0.0",
     "overmind-forms": "^0.0.4",
     "overmind-react": "^21.0.0",
